@@ -9,7 +9,7 @@ Every project needs tests, and you need all tests to be together. To help with m
 * integration
 * ui
 
-controllers, helpers, models and middlewares are pretty clear. They test the code from their respective counterparts at the root of your project. In each folder you should have one file for each file in the original folders and it usually has the exact same name. This makes it easier to find and maintain your tests.
+Controllers, helpers, models and middlewares are pretty clear. They test the code from their respective counterparts at the root of your project. In each folder you should have one file for each file in the original folders and it usually has the exact same name. This makes it easier to find and maintain your tests.
 
 In the 4 folders above, most of your tests will be unit tests, which means that you are testing your code isolated from the rest of the application. However, the integration folder contains test which will ensure that all your application parts work correctly together. For example, it will have tests which will check that the right middlewares are loaded at the right time. These tests are usually slower than your unit tests.
 
