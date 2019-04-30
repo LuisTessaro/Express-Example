@@ -1,14 +1,14 @@
-var express = require('express'),
-    router = express.Router(),
-    Comment = require('../models/comment')
+// Express imports
+const express = require('express'),
+    router = express.Router()
 
-router.use('/comments', require('./comments'))
-router.use('/users', require('./users'))
+// Models imports if needed
+// something something = require something
+// const Example = require('../models/example')
 
-router.get('/', function(req, res) {
-    Comments.all(function(err, comments) {
-        res.render('index', { comments: comments })
-    })
-})
+
+// Routes in use
+router.use('/', require('./example'))
+router.use('/', require('./example2'))
 
 module.exports = router
