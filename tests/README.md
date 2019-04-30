@@ -2,12 +2,12 @@
 
 Every project needs tests, and you need all tests to be together. To help with managing them, you will separate them in several sub-folders.
 
-controllers
-helpers
-models
-middlewares
-integration
-ui
+* controllers
+* helpers
+* models
+* middlewares
+* integration
+* ui
 
 controllers, helpers, models and middlewares are pretty clear. They test the code from their respective counterparts at the root of your project. In each folder you should have one file for each file in the original folders and it usually has the exact same name. This makes it easier to find and maintain your tests.
 
