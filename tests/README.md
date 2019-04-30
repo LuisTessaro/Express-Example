@@ -1,4 +1,4 @@
-Tests everything which is in the other folders
+# Tests everything which is in the other folders
 
 Every project needs tests, and you need all tests to be together. To help with managing them, you will separate them in several sub-folders.
 

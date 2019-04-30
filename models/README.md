@@ -1,4 +1,4 @@
-Represents data, implements business logic and handles storage
+# Represents data, implements business logic and handles storage
 
 Models are the files where you interact with your database. They contain all the methods and functions which will handle your data. This includes not only the methods for creating, reading, updating and deleting items, but also any additional business logic. For example, if you had a car model, you could have a mountTyres method.
 

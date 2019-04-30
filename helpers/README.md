@@ -1,4 +1,4 @@
-Code and functionality to be shared by different parts of the project
+# Code and functionality to be shared by different parts of the project
 
 This folder contains utility code, which is used at multiple models, middlewares or controllers, but does not fall under the category they cover. Usually you will have different files for different common tasks.
 

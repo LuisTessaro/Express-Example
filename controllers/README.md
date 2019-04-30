@@ -1,4 +1,4 @@
-Defines your app routes and their logic
+# Defines your app routes and their logic
 
 This is the folder where you will be defining all the routes that your app will serve. Your controllers will handle web requests, serve your templates to the user and interact with your models to process and retrieve data. It’s the glue which connects and controls your web app.
 

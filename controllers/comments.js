@@ -1,7 +1,7 @@
 var express = require('express'),
     router = express.Router(),
     Comment = require('../models/comment'),
-    auth = require('../middlewares/auth')
+    auth = require('../middlewares/users')
 
 router.post('/', auth, (req, res) => {
     user = req.user.id

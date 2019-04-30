@@ -1,4 +1,4 @@
-Provides templates which are rendered and served by your routes
+# Provides templates which are rendered and served by your routes
 
 This folder contains all the templates which are rendered by your application. This is the place where usually the designers in your team will work.
 
