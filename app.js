@@ -1,11 +1,18 @@
 const express = require('express'),
     app = express()
+const port = process.argv[2] || 3000
+const bodyParser = require('body-parser')
+
 
 app.set('view engine', 'pug')
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static('./public'))
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(require('./controllers'))
 
-app.listen(3000, function () {
-    console.log('Listening on port 3000...')
+
+app.listen(port, () => {
+    console.log('Listening on port ' + port + '!')
 })
