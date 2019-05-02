@@ -50,7 +50,10 @@ exports.update = (query, newValues, dbName, tableName) => {
 exports.readTable = (dbName, tableName) => {
     return new Promise((resolve, reject) => {
         MongoClient.connect(url, { useNewUrlParser: true }, (err, db) => {
-            if (err) throw err
+            if (err) {
+                reject(err)
+                throw err
+            }
             const dbo = db.db(dbName)
             dbo.collection(tableName).find({}).toArray((err, result) => {
                 if (err) {
