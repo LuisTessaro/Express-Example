@@ -5,8 +5,12 @@ const express = require('express'),
 // Controller import
 const digimonById = require('./getDigimonId')
 const digimonAll = require('./getAllDigimons')
+const createDigimon = require('./createDigimon')
+const deleteDigimon = require('./deleteDigimon')
 
-router.get('/:id', digimonById)
+router.get('/:name', digimonById)
 router.get('/', digimonAll)
+router.post('/', createDigimon)
+router.delete('/:name', deleteDigimon)
 
 exports.router = router

@@ -1,10 +1,14 @@
 const DigimonModel = require('../../models/digimon')
 
+//locahost:3000/digimon/id
+//method: get
+
 const root = async (req, res) => {
   try {
-    const digimonId = req.params.id 
-    const digimon = await DigimonModel.get(digimonId)
-    res.render('digimon', digimon)
+    const name = req.params.name
+    const digimon = await DigimonModel.get(name)
+    const content = 'Name ' + digimon.name + ' powerlevel: ' + digimon.powerLevel
+    res.render('digimon', { title: digimon.name, message: content })
   }
   catch (err) {
     console.log(err)

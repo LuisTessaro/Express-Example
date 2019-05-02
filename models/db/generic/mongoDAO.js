@@ -2,7 +2,7 @@ const MongoClient = require('mongodb').MongoClient
 const url = 'mongodb://localhost:27017/'
 
 // Create
-genericDAO.prototype.create = (obj, dbName, tableName) => {
+exports.create = (obj, dbName, tableName) => {
     return new Promise((resolve, reject) => {
         MongoClient.connect(url, { useNewUrlParser: true }, (err, db) => {
             if (err) throw err
@@ -17,14 +17,14 @@ genericDAO.prototype.create = (obj, dbName, tableName) => {
 }
 
 // Delete
-genericDAO.prototype.deleteByParameter = (query, dbName, tableName) => {
+exports.deleteByParameter = (query, dbName, tableName) => {
     return new Promise((resolve, reject) => {
         MongoClient.connect(url, { useNewUrlParser: true }, (err, db) => {
             if (err) throw err
             const dbo = db.db(dbName)
             dbo.collection(tableName).deleteOne(query, (err, _) => {
                 if (err) reject(err)
-                resolve('Success ' + result)
+                resolve('Success')
                 db.close()
             })
         })
@@ -32,7 +32,7 @@ genericDAO.prototype.deleteByParameter = (query, dbName, tableName) => {
 }
 
 // Update
-genericDAO.prototype.update = (query, newValues, dbName, tableName) => {
+exports.update = (query, newValues, dbName, tableName) => {
     return new Promise((resolve, reject) => {
         MongoClient.connect(url, { useNewUrlParser: true }, (err, db) => {
             if (err) throw err
@@ -47,7 +47,7 @@ genericDAO.prototype.update = (query, newValues, dbName, tableName) => {
 }
 
 // Read table
-genericDAO.prototype.readTable = (dbName, tableName) => {
+exports.readTable = (dbName, tableName) => {
     return new Promise((resolve, reject) => {
         MongoClient.connect(url, { useNewUrlParser: true }, (err, db) => {
             if (err) throw err
@@ -65,7 +65,7 @@ genericDAO.prototype.readTable = (dbName, tableName) => {
 }
 
 // Read
-genericDAO.prototype.readOneByParameter = (query, dbName, tableName) => {
+exports.readOneByParameter = (query, dbName, tableName) => {
     return new Promise((resolve, reject) => {
         MongoClient.connect(url, { useNewUrlParser: true }, (err, db) => {
             if (err) throw err
@@ -75,7 +75,6 @@ genericDAO.prototype.readOneByParameter = (query, dbName, tableName) => {
                     reject(err)
                     throw err
                 }
-                console.log('Generic readOne Success')
                 resolve(result)
                 db.close()
             })
