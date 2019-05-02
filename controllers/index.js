@@ -7,7 +7,7 @@ const digimon = require('./digimon/digimonHandler')
 
 
 // Middlewares
-const logMiddleware = require('../middlewares/logger').myLogger
+const logMiddleware = require('../middlewares/logger')
 const digimonMiddleware = require('../middlewares/digimonReqAuth')
 const pokemonMiddleware = require('../middlewares/pokemonReqAuth')
 

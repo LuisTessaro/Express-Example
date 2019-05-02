@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(require('./controllers'))
 
-app.get('*', (req, res) => {
+app.use('*', (req, res) => {
     res.status(404).send('Page Not Found')
 })
 

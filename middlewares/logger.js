@@ -1,6 +1,6 @@
 // Simple middleware that loggs something
 
-exports.myLogger = function (req, res, next) {
-    console.log('LOGGED');
-    next();
-};
+module.exports = (req, res, next) => {
+    console.log(`${req.method} ON ${req.url}`)
+    next()
+}
