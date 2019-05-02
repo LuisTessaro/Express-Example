@@ -75,7 +75,10 @@ exports.readOneByParameter = (query, dbName, tableName) => {
                     reject(err)
                     throw err
                 }
-                resolve(result)
+                if (result[0])
+                    resolve(result)
+                else
+                    reject('Not found')
                 db.close()
             })
         })

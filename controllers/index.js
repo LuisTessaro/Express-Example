@@ -2,8 +2,8 @@
 const express = require('express'),
     router = express.Router()
 
-const pokemon = require('./pokemon')
-const digimon = require('./digimon')
+const pokemon = require('./pokemon/pokemonHandler')
+const digimon = require('./digimon/digimonHandler')
 
 const logMiddleware = require('../middlewares/logger').myLogger
 

@@ -12,13 +12,6 @@ exports.read = async name => {
     catch (err) {
         return err
     }
-    // return new Promise((resolve, reject) => {
-    //     DigimonDAOmongo.readOneByParameter({ name: name }, dbName, tableName)
-    //         .then((resp) => {
-    //             if (resp[0]) resolve(resp[0])
-    //             else reject('no item by that id')
-    //         })
-    // })
 }
 
 exports.create = async digimon => {

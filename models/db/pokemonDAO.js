@@ -4,9 +4,10 @@ const PokemonDAOsql = require('./generic/sqlDAO')
 const dbName = 'popularMonsters'
 const tableName = 'pokemon'
 
-exports.read = async id => {
+exports.read = async name => {
     try {
-        return await PokemonDAOmongo.readOneByParameter({ pokemonId: id }, dbName, tableName)[0]
+        const resp = await PokemonDAOmongo.readOneByParameter({ name: name }, dbName, tableName)
+        return resp[0]
     }
     catch (err) {
         return err
@@ -22,9 +23,9 @@ exports.create = async pokemon => {
     }
 }
 
-exports.delete = async id => {
+exports.delete = async name => {
     try {
-        return await PokemonDAOmongo.deleteByParameter({ pokemonId: id }, dbName, tableName)
+        return await PokemonDAOmongo.deleteByParameter({ name: name }, dbName, tableName)
     }
     catch (err) {
         return err
