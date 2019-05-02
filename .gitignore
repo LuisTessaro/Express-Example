@@ -41,7 +41,6 @@ $RECYCLE.BIN/
 package-lock.json
 app/config
 package-lock.js
-test.js
 
 # Directories potentially created on remote AFP share
 .AppleDB

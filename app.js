@@ -3,7 +3,6 @@ const express = require('express'),
 const port = process.argv[2] || 3000
 const bodyParser = require('body-parser')
 
-
 app.set('view engine', 'pug')
 
 app.use(express.static('./public'))
