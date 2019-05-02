@@ -14,6 +14,7 @@ const logMiddleware = require('../middlewares/logger').myLogger
 
 // router.use('/pokemon', logMiddleware, pokemon.router)
 router.use('/digimon', logMiddleware, digimon.router)
+router.use('/pokemon', logMiddleware, pokemon.router)
 
 // router.use('/', require('./example2'))
 

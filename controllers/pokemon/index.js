@@ -2,13 +2,11 @@
 const express = require('express'),
     router = express.Router()
 
-// Models imports
-// const Example = require('../models/example')
+// Controller import
+const pokemonById = require('./getPokemonId')
+const pokemonAll = require('./getAllPokemons')
 
-// Routes in /example
-exports.example = (req, res) => {
-    // Example.get()
-    //     .then(resolve => {
-    //         res.render('example', resolve);
-    //     })
-}
+router.get('/:id', pokemonById)
+router.get('/', pokemonAll)
+
+exports.router = router
