@@ -5,7 +5,6 @@ const express = require('express'),
 const pokemon = require('./pokemon/pokemonHandler')
 const digimon = require('./digimon/digimonHandler')
 
-
 // Middlewares
 const logMiddleware = require('../middlewares/logger')
 const digimonMiddleware = require('../middlewares/digimonReqAuth')
