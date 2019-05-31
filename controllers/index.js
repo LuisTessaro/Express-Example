@@ -2,17 +2,15 @@
 const express = require('express'),
     router = express.Router()
 
-const pokemon = require('./pokemon/pokemonHandler')
-const digimon = require('./digimon/digimonHandler')
+const client = require('./client/clientHandler')
+const manager = require('./manager/managerHandler')
 
-// Middlewares
+// Middlewares for entire routes
 const logMiddleware = require('../middlewares/logger')
-const digimonMiddleware = require('../middlewares/digimonReqAuth')
-const pokemonMiddleware = require('../middlewares/pokemonReqAuth')
 
 // Routes in use
-router.use('/digimon', logMiddleware, digimonMiddleware, digimon.router)
-router.use('/pokemon', logMiddleware, pokemonMiddleware, pokemon.router)
+router.use('/manager', logMiddleware, manager.router)
+router.use('/client', logMiddleware, client.router)
 
 // 404 setup
 router.use('*', (req, res) => {

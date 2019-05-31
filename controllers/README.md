@@ -15,7 +15,7 @@ As all routes and their controllers will be store here, they need to be well org
 To setup a route, on our index.js "root" file, we must first import the methods from the controller folders (client folder) then pick a route in whitch the'll live in . These will be exported inside the controllers folders by the name "controller name" then Handler, clientHandler in the case of the client.
 
 ```
-const client = require('./pokemon/pokemonHandler')
+const client = require('./client/clientHandler')
 
 router.use('/client', client.router)
 ```
