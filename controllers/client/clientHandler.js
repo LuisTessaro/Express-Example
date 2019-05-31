@@ -8,7 +8,7 @@ const createClient = require('./createClient')
 const updateClient = require('./updateClient')
 
 router.get('/:id', getClient)
-router.post('/', createPokemon)
-router.put('/:id', deletePokemon)
+router.post('/', createClient)
+router.put('/:id', updateClient)
 
 exports.router = router
