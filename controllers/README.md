@@ -5,3 +5,22 @@ This is the folder where you will be defining all the routes that your app will 
 Usually you will have at least one file for each logical part of your application. For example, one file to handle comments action, another file to handle requests about users and so on. It’s a good practice that all routes from the same controller begin with the same prefix. For example /comments/all and /comments/new.
 
 It’s sometimes hard to decide what should go into a controller and what should go into the model. A best practice is that a controller should never directly access the database. It should never call methods like “write”, “update”, “fetch” which most database drivers provide. Instead it should rely on model methods. For example if you have a car model, and the you want to mount 4 wheels to the car, the controller will not call db.update(id, {wheels: 4}) but instead it will call something like car.mountWheels(id, 4).
+
+### Structure 
+As all routes and their controllers will be store here, they need to be well organized, so every route must have its own folder, for example: A client route, this route, will have the responsibility of viewing, creating and updating data from a client, so there must be a **client** folder and inside that folder we should have a clientHandler.js that will import our functions and handlers to expecific methods. Example: createClient -> router.post // updateClient -> router.put
+
+### Setting up a route
+
+To setup a route, on our index.js "root" file, we must first import the methods from the controller folders (client folder) then pick a route in whitch the'll live in . These will be exported inside the controllers folders by the name "controller name" then Handler, clientHandler in the case of the client.
+
+```
+const client = require('./pokemon/pokemonHandler')
+
+router.use('/client', client.router)
+```
+
+If we would like to add a middleware to our route in a more generic way, this is where we should add it. Please note that if we do this, all methods inside the client router will have this middleware. In the case of your router.get router.post and router.put would have to get through the logMiddleware function
+
+```
+router.use('/client', logMiddleware, client.router)
+```
