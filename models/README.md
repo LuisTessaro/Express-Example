@@ -7,3 +7,30 @@ You should create at least one file for each type of data in your database. In o
 You should also try to make your models independent from the outside world. They don’t need to know about other models and they should never include them. They don’t need to know about controllers or who uses them. They should never receive request or response objects. They should never return http errros, but they should return model specific errors.
 
 All this will make your models much more maintainable. They will be tested easily because they will have very few and clear dependencies. Models can be moved around if needed and they can be used by anyone. Changing something in one model, doesn’t affect any other.
+
+### Example
+
+```
+// As models handle db functions import them here
+const ClientDAO = require('./db/ClientDAO')
+// Methods
+exports.get = (id) => {
+    return ClientDAO.read(id)
+}
+
+exports.getAll = () => {
+    return ClientDAO.readAll()
+}
+
+exports.create = (client) => {
+    return ClientDAO.create(client)
+}
+
+exports.update = (id, client) => {
+    return ClientDAO.update(id, client)
+}
+
+exports.delete = (id) => {
+    return ClientDAO.delete(id)
+}
+```
