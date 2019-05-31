@@ -4,9 +4,11 @@ const express = require('express'),
 
 // Controller import
 const getClient = require('./getOneClient')
+const createClient = require('./createClient')
+const updateClient = require('./updateClient')
 
 router.get('/:id', getClient)
 router.post('/', createPokemon)
-router.delete('/:name', deletePokemon)
+router.put('/:id', deletePokemon)
 
 exports.router = router
