@@ -4,7 +4,7 @@ const root = async (req, res) => {
     try {
         const manager = req.body.manager
         await ManagerModel.create(manager)
-        res.render('success')
+        res.status(201).send('success')
     }
     catch (err) {
         throw err

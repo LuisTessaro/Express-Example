@@ -4,11 +4,12 @@ const root = async (req, res) => {
     try {
         const id = req.params.id
         const manager = await ManagerModel.get(id)
-        if (manager === 'Not found')
-            res.status(404).send('Client Not Found')
+        if (manager) {
+            const content = 'id ' + manager._id + ' name: ' + manager.name
+            res.status(200).render('manager', { title: manager._id, message: content })
+        }
         else {
-            const content = 'id ' + manager.id + ' name: ' + manager.name
-            res.render('manager', { title: manager.id, message: content })
+            res.status(404).send('Client Not Found')
         }
     }
     catch (err) {

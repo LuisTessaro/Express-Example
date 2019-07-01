@@ -1,22 +1,23 @@
 // As models handle db functions import them here
-const ManagerDAO = require('./db/ManagerDAO')
+const Manager = require('./db/mongoose-models/manager')
 // Methods
-exports.get = (id) => {
-    return ManagerDAO.read(id)
+exports.get = async (id) => {
+    return await Manager.findById(id)
 }
 
-exports.getAll = () => {
-    return ManagerDAO.readAll()
+exports.getAll = async () => {
+    return await Manager.find({})
 }
 
-exports.create = (manager) => {
-    return ManagerDAO.create(manager)
+exports.create = async (manager) => {
+    const managerObj = new Manager(manager)
+    return await managerObj.save()
 }
 
-exports.update = (id, manager) => {
-    return ManagerDAO.update(id, manager)
+exports.update = async (id, manager) => {
+    return await Manager.findByIdAndUpdate(id, manager)
 }
 
-exports.delete = (id) => {
-    return ManagerDAO.delete(id)
+exports.delete = async (id) => {
+    return await Manager.findByIdAndDelete(id)
 }

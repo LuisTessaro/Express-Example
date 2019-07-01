@@ -4,15 +4,16 @@ const root = async (req, res) => {
     try {
         const id = req.params.id
         const client = await ClientModel.get(id)
-        if (client === 'Not found')
-            res.status(404).send('Client Not Found')
+        if (client) {
+            const content = 'id ' + client._id + ' name: ' + client.name
+            res.status(200).render('client', { title: client._id, message: content })
+        }
         else {
-            const content = 'id ' + client.id + ' name: ' + client.name
-            res.render('client', { title: client.id, message: content })
+            res.status(404).send('Client Not Found')
         }
     }
     catch (err) {
-        throw res.status(500).send('Error')
+        return res.status(500).send('Error')
     }
 }
 

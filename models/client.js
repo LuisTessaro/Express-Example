@@ -1,22 +1,23 @@
 // As models handle db functions import them here
-const ClientDAO = require('./db/ClientDAO')
+const Client = require('./db/mongoose-models/client')
 // Methods
-exports.get = (id) => {
-    return ClientDAO.read(id)
+exports.get = async (id) => {
+    return await Client.findById(id)
 }
 
-exports.getAll = () => {
-    return ClientDAO.readAll()
+exports.getAll = async () => {
+    return await Client.find({})
 }
 
-exports.create = (client) => {
-    return ClientDAO.create(client)
+exports.create = async (client) => {
+    const clientObj = new Client(client)
+    return await clientObj.save()
 }
 
-exports.update = (id, client) => {
-    return ClientDAO.update(id, client)
+exports.update = async (id, client) => {
+    return await Client.findByIdAndUpdate(id, client)
 }
 
-exports.delete = (id) => {
-    return ClientDAO.delete(id)
+exports.delete = async (id) => {
+    return await Client.findByIdAndDelete(id)
 }

@@ -4,10 +4,10 @@ const root = async (req, res) => {
     try {
         const client = req.body.client
         await ClientModel.create(client)
-        res.render('success')
+        res.status(201).send('Success')
     }
     catch (err) {
-        throw err
+        return res.status(500).send('Error')
     }
 }
 
