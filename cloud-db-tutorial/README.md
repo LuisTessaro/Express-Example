@@ -20,6 +20,6 @@ What we are looking for here is creating a new addon
 8. Pick a name and zone
 9. You are all done
 
-<iframe src="https://share.getcloudapp.com/QwueD2j6?branding=true&amp;embed=true&amp;title=true" width="575" height="400" style="border:none" frameborder="0" allowtransparency="true" allowfullscreen="true">              </iframe>
+![alt text](../readme-images/tutorial-gif.gif)
 
 Get you database server info on the information tab (mongoose uses the **MONGODB_ADDON_URI** field to connect)
