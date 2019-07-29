@@ -20,4 +20,6 @@ What we are looking for here is creating a new addon
 8. Pick a name and zone
 9. You are all done
 
+![alt text](../readme-images/Tutorial.gif)
+
 Get you database server info on the information tab (mongoose uses the **MONGODB_ADDON_URI** field to connect)
