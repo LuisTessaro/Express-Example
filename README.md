@@ -7,7 +7,7 @@ Examples, tips and shot explanations will be given throughout this repository by
 ## Structure represented as image
 
 To be able do really understand this image, your will probably need to open the repo folders and read further into the readmes.
-![alt text](readme/img/structimg.png)
+![alt text](readme-images/structimg.png)
 
 ## Basic example
 
