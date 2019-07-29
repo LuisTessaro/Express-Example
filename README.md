@@ -1,4 +1,4 @@
-# Express
+# Express Example - Tutorial and Scaffolder  
 
 The goal of this repository is to help me study a proper Express file structure and speedup my process when creating a new server/app.
 
@@ -7,7 +7,7 @@ Examples, tips and shot explanations will be given throughout this repository by
 ## Structure represented as image
 
 To be able do really understand this image, your will probably need to open the repo folders and read further into the readmes.
-![alt text](img/structimg.png)
+![alt text](readme/img/structimg.png)
 
 ## Basic example
 

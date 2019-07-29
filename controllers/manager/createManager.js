@@ -1,14 +1,14 @@
-const ManagerModel = require('../../models/manager')
+const Manager = require('../../models/mongoose-models/Manager')
 
-const root = async (req, res) => {
+const createClient = async (req, res) => {
     try {
-        const manager = req.body.manager
-        await ManagerModel.create(manager)
-        res.status(201).send('success')
+        const manager = new Manager(req.body)
+        await manager.save()
+        res.status(201).send('Success')
     }
     catch (err) {
-        throw err
+        return res.status(500).send('Error' + err)
     }
 }
 
-module.exports = root
+module.exports = createClient

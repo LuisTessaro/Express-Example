@@ -9,8 +9,8 @@ const manager = require('./manager/managerHandler')
 const logMiddleware = require('../middlewares/logger')
 
 // Routes in use
-router.use('/manager', logMiddleware, manager.router)
-router.use('/client', logMiddleware, client.router)
+router.use('/client', logMiddleware, client)
+router.use('/manager', logMiddleware, manager)
 
 // 404 setup
 router.use('*', (req, res) => {

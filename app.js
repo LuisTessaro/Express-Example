@@ -1,5 +1,5 @@
 require('dotenv').config()
-require('./models/db/mongoose')
+require('./models/mongoose')
 
 const config = require('./config/config')
 const port = process.env.PORT || process.argv[2] || 3000

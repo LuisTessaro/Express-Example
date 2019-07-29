@@ -1,10 +1,13 @@
-const ClientModel = require('../../models/client')
+const Client = require('../../models/mongoose-models/Client')
 
 const root = async (req, res) => {
     try {
-        const { id, client } = req.body
-        await ClientModel.update(id, client)
-        res.status(204).send('Success')
+        const { id } = req.params
+        const client = req.body
+        await Client.findByIdAndUpdate(id, {
+            $set: client
+        }, { new: true })
+        return await res.status(200).send('Success')
     }
     catch (err) {
         return res.status(500).send('Error')
