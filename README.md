@@ -93,3 +93,12 @@ app.use('*', (req, res) => {
     res.status('404').send('404')
 })
 ```
+
+### References
+
+* [Express](https://expressjs.com/en/5x/api.html)
+* [dotenv](https://www.npmjs.com/package/dotenv)
+* [JWT](https://jwt.io/introduction/)
+* [MongoDB](https://docs.mongodb.com/)
+* [Mongoose](https://mongoosejs.com/docs/api.html)
+* [Pug.js](https://pugjs.org/api/getting-started.html)
