@@ -102,3 +102,9 @@ app.use('*', (req, res) => {
 * [MongoDB](https://docs.mongodb.com/)
 * [Mongoose](https://mongoosejs.com/docs/api.html)
 * [Pug.js](https://pugjs.org/api/getting-started.html)
+
+### Contributors
+
+<a href="https://github.com/LuisTessaro/Express-Example/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=LuisTessaro/Express-Example" />
+</a>
